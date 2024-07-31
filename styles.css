@@ -14,67 +14,58 @@ body {
 
 .code-container {
   max-width: 1200px;
-  margin: 0 auto;
-}
-
-.range-container {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
 }
 
 .range-labels {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 4px;
 }
 
 .range-label {
-  font-size: 0.875rem; /* Text size */
+  font-size: 0.75rem; /* Text size */
   color: #4A5568; /* Tailwind gray-600 color */
 }
 
 .range-input {
   -webkit-appearance: none;
   width: 100%;
-  height: 2px;
+  height: 3px;
   background: #4A5568;
   border-radius: 5px;
   outline: none;
-  opacity: 0.7;
+  opacity: 0.5;
   transition: opacity .15s ease-in-out;
 }
 
 .range-input::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
   background: #4A5568;
   cursor: pointer;
 }
 
 .range-input::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  width: 13px;
+  height: 13px;
   border-radius: 50%;
   background: #4A5568;
   cursor: pointer;
 }
 
-
 /* Custom styles for floating labels */
 .floating-label-group {
   position: relative;
-  margin-top: 2rem;
 }
 
 .floating-label-input {
   border: 1px solid #ccc;
-  padding: 1rem 1rem 0.5rem;
+  padding: 1rem 1rem;
   width: 100%;
   transition: border-color 0.3s;
+  background: #f0f0f0;
 }
 
 .floating-label-input:focus {

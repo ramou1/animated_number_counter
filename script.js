@@ -1,16 +1,21 @@
 document.addEventListener("DOMContentLoaded", function() {
   const counter = document.getElementById('counter');
   const durationRange = document.getElementById('durationRange');
-  const durationDisplay = document.getElementById('durationDisplay');
-  const minValue = document.getElementById('minValue');
+  const startValueInput = document.getElementById('startValue');
+  const endValueInput = document.getElementById('endValue');
   const maxValue = document.getElementById('maxValue');
-  
-  const startValue = 0;
-  const endValue = 100;
+  const updateButton = document.getElementById('updateButton');
+
+  function updateDurationDisplay() {
+    const duration = parseInt(durationRange.value);
+    maxValue.textContent = duration;
+  }
 
   function updateDisplay() {
+    const startValue = parseInt(startValueInput.value) || 0;
+    const endValue = parseInt(endValueInput.value) || 100;
     const duration = parseInt(durationRange.value);
-    durationDisplay.value = duration;
+
     animateCounter(startValue, endValue, duration);
   }
 
@@ -31,7 +36,9 @@ document.addEventListener("DOMContentLoaded", function() {
     requestAnimationFrame(animation);
   }
 
-  durationRange.addEventListener('input', updateDisplay);
+  durationRange.addEventListener('input', updateDurationDisplay);
+  updateButton.addEventListener('click', updateDisplay);
 
-  updateDisplay(); // Initialize display
+  // Inicializa o valor do maxValue ao carregar a página
+  updateDurationDisplay();
 });
