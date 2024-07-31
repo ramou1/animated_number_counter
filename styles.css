@@ -62,3 +62,39 @@ body {
   background: #4A5568;
   cursor: pointer;
 }
+
+
+/* Custom styles for floating labels */
+.floating-label-group {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.floating-label-input {
+  border: 1px solid #ccc;
+  padding: 1rem 1rem 0.5rem;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.floating-label-input:focus {
+  outline: none;
+  border-color: #4F46E5;
+}
+
+.floating-label-label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  pointer-events: none;
+  transition: all 0.3s;
+  color: #6b7280; /* Gray-500 */
+}
+
+.floating-label-input:focus + .floating-label-label,
+.floating-label-input:not(:placeholder-shown) + .floating-label-label {
+  top: 0;
+  left: 0.75rem;
+  font-size: 0.75rem; /* Text-xs */
+  color: #4F46E5; /* Indigo-500 */
+}
